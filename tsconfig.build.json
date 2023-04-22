@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "Node16",
+    "moduleResolution": "node",
+    "target": "es2022",
+    "lib": ["es2022"],
+    "rootDir": "./bin",
+    "strict": true,
+    "sourceMap": true,
+    "inlineSources": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "exclude": ["node_modules", "**/*.spec.ts", "test/**"]
+}
