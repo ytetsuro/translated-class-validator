@@ -2,13 +2,23 @@
   "name": "class-validator-translate",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "make"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ytetsuro/class-validator-translate.git"
+  },
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "node": {
+        "require": "./dist/*.cjs.js",
+        "import": "./dist/*.mjs"
+      },
+      "default": "./dist/*.esm.js"
+    }
   },
   "keywords": [],
   "author": "",
@@ -22,6 +32,9 @@
   },
   "devDependencies": {
     "@types/node": "^18.13.0",
-    "class-validator": "^0.14.0"
+    "class-validator": "^0.14.0",
+    "esbuild": "^0.19.11",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
   }
 }
