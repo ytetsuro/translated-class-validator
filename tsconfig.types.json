@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2018",
+    "lib": ["es2022"],
+    "outDir": "./.types/",
+    "rootDir": "./src",
+    "strict": true,
+    "removeComments": false,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "declaration": true,
+    "declarationDir": "./.types"
+  },
+  "include": [
+    "./src/**/*"
+  ],
+  "exclude": ["node_modules","**/*.spec.ts", "test/**"]
+}
