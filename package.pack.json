@@ -1,6 +1,6 @@
 {
   "name": "translated-class-validator",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "This repository translates class-validator as thinly-wrapped as possible.",
   "repository": {
     "type": "git",

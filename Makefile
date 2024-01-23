@@ -1,4 +1,4 @@
-all:	clean build-js build-type build-package;
+all:	clean build-js build-type build-config;
 
 clean:
 	rm -rf ./dist
@@ -10,5 +10,7 @@ build-type:	./src
 	./node_modules/.bin/tsc --project tsconfig.types.json -d && \
 	ls ./.types/languages/*.d.ts | xargs -I FILE mv FILE ./dist/
 
-build-package:	./package.pack.json
-	cp -p package.pack.json dist/package.json
+build-config:	./package.pack.json ./README.md
+	cp -p package.pack.json dist/package.json && \
+	cp -p README.md dist/
+
