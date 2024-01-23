@@ -2,12 +2,20 @@
   "name": "translated-class-validator",
   "version": "0.0.1",
   "description": "This repository translates class-validator as thinly-wrapped as possible.",
-  "scripts": {
-    "build": "make"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ytetsuro/translated-class-validator.git"
+  },
+  "type": "module",
+  "exports": {
+    "./*": {
+      "types": "./*.d.ts",
+      "node": {
+        "require": "./*.cjs.js",
+        "import": "./*.mjs"
+      },
+      "default": "./*.esm.js"
+    }
   },
   "keywords": ["class-validator", "translate"],
   "author": "iBotchME (@ytetsuro)",
@@ -16,11 +24,8 @@
     "url": "https://github.com/ytetsuro/translated-class-validator/issues"
   },
   "homepage": "https://github.com/ytetsuro/translated-class-validator#readme",
-  "devDependencies": {
-    "@types/node": "^18.13.0",
-    "class-validator": "^0.14.0",
-    "esbuild": "^0.19.11",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
-  }
+  "peerDependencies": {
+    "class-validator": "^0.14.0"
+  },
+  "devDependencies": {}
 }
