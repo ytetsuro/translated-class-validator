@@ -55,6 +55,7 @@ If you are already using `class-validator`, you can apply the translated default
 # Support Language
 
 |Language|exports|
+|:--|:--|
 |Japanese|ja|
 
 Add your country's language if you feel like it. :)
