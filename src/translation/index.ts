@@ -9,10 +9,9 @@ const getDefinedParameters = (callback: (...args: any) => any) => {
     .toString()
     .replace(/\/\/.*$|\/\*[\s\S]*?\*\/|\s/gm, '');
     
-  const params = ([source.match(/\((.*?)\)/) ?? '']
-    .at(1) as string).split(',');
+  const params = (source.match(/\((.*?)\)/)?.[1] ?? '' as string).split(',');
 
-  return params.length === 1 && params.at(0) === '' ? [] : params;
+  return params.length === 1 && params[0] === '' ? [] : params;
 };
 
 export const generateRules = (messages: TranslationObject) => Object.fromEntries(
