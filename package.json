@@ -3,6 +3,7 @@
   "version": "0.0.4",
   "description": "This repository translates class-validator as thinly-wrapped as possible.",
   "scripts": {
+    "test": "jest",
     "build": "make"
   },
   "repository": {
