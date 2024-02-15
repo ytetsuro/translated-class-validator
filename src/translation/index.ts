@@ -3,6 +3,7 @@ import type { TranslationObject } from "../types/translation";
 
 type TranslationKeys = keyof TranslationObject;
 type ClassValidatorType = typeof ClassValidator;
+type ClassValidatorValidationRule<Rule extends TranslationKeys> = Rule extends keyof ClassValidatorType ? ClassValidatorType[Rule] : never;
 
 export function generateRules<T extends Partial<TranslationObject>>(messages: T) {
   return Object.fromEntries(
@@ -26,7 +27,7 @@ export function generateRules<T extends Partial<TranslationObject>>(messages: T)
         );
       },
     ]),
-  ) as Pick<ClassValidatorType, TranslationKeys>;
+  ) as {[key in TranslationKeys]: ClassValidatorValidationRule<key>};
 }
 
 function getDefinedParameters(callback: (...args: any) => any) {
