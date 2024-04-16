@@ -41,7 +41,7 @@ function getDefinedParameters(callback: (...args: any) => any) {
 };
 
 function getValidationOptionArgumentIndex(args: unknown[], allArgumentsCount: number) {
-  const validationOptionArgumentIndex = args.findLastIndex(arg => ClassValidator.isValidationOptions(arg));
+  const validationOptionArgumentIndex = args.findLastIndex((arg: any) => arg?.constructor === Object && ClassValidator.isValidationOptions(arg));
   
   if (validationOptionArgumentIndex === -1) {
     return allArgumentsCount - 1;

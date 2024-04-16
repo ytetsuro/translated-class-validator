@@ -5,6 +5,7 @@ const validationRules = generateRules({
     IsDefined: 'default message',
     Matches: 'default message',
     IsUUID: 'default message',
+    Max: 'default message',
 });
 
 describe('should overwritten for validation error message.', () => {
@@ -78,6 +79,18 @@ describe('should overwritten for validation error message.', () => {
         const actual = await getFirstError(input);
 
         expect(actual).toBe('overwritten');
+    });
+
+    it('should not throws error when defined primitive argument.', async () => {
+        const input = new class {
+            @validationRules.Max(1)
+            property = null;
+        };
+        input.property = null;
+
+        const actual = await getFirstError(input);
+
+        expect(actual).toBe('default message');
     });
 
     async function getFirstError(obj: Object) {
